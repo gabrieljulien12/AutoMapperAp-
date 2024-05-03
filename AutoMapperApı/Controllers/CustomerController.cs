@@ -48,7 +48,7 @@ namespace AutoMapperApı.Controllers
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
 
-            // Oluşturulan müşteriyi doğrudan döndürebiliriz
+          
             return CreatedAtAction(nameof(GetCustomerById), new { id = customer.Id }, customer);
 
           
