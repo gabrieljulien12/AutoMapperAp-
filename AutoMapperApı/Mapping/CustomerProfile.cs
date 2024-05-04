@@ -8,7 +8,7 @@ namespace AutoMapperApı.Mapping
     {
         public CustomerProfile()
         {
-            CreateMap<Customer, CustomerDTO>().ReverseMap();
+           CreateMap<Customer, CustomerDTO>().ForMember (dest =>dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName)).ReverseMap();
         }
     }
 }
